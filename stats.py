@@ -1,7 +1,7 @@
 def count_words(text):
     return len(text.split())
 
-def count_char(text):
+def char_occurrences(text):
     text_lower = text.lower()
     char_dict = {}
 
@@ -15,12 +15,12 @@ def count_char(text):
 def sort_on(chars):
     return chars["num"]
 
-def get_sorted_char_list(num_char):
+def get_sorted_char_list(char_counts):
     char_list = []
 
-    for char in num_char:
+    for char in char_counts:
         if char.isalpha():
-            char_entry = {"char": char, "num": num_char[char]}
+            char_entry = {"char": char, "num": char_counts[char]}
             char_list.append(char_entry)
 
     char_list.sort(reverse=True, key=sort_on)
